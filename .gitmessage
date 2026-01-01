@@ -1,0 +1,133 @@
+# <type>(<scope>): <subject>
+#
+# <body>
+#
+# <footer>
+
+# ============================================================================
+# CONVENTIONAL COMMITS GUIDE
+# ============================================================================
+#
+# Type (required) - Choose one:
+#   feat:     New feature for users
+#   fix:      Bug fix
+#   docs:     Documentation only
+#   style:    Code style (formatting, semicolons)
+#   refactor: Code change that neither fixes bug nor adds feature
+#   perf:     Performance improvement
+#   test:     Adding or updating tests
+#   build:    Build system or external dependencies
+#   ci:       CI/CD configuration
+#   chore:    Other changes (maintenance)
+#   revert:   Revert a previous commit
+#
+# Scope (optional) - Component affected:
+#   gcp-auth, sheets-mcp, drive-mcp, docs, etc.
+#
+# Subject (required) - Brief description:
+#   - Use imperative mood ("add" not "added" or "adds")
+#   - Don't capitalize first letter
+#   - No period at the end
+#   - Limit to 50 characters
+#   - Be specific and descriptive
+#
+# Body (optional) - Detailed explanation:
+#   - Separate from subject with blank line
+#   - Explain WHAT and WHY, not HOW
+#   - Wrap at 72 characters
+#   - Include:
+#     * Context/background
+#     * Reasoning for change
+#     * Alternatives considered
+#     * Performance impact
+#     * Breaking changes
+#
+# Footer (optional) - Metadata:
+#   Standard tokens:
+#     Refs: GH-123, GH-456         # Reference issues
+#     Closes: GH-789                # Close issues
+#     Fixes: GH-101                 # Fix issues
+#     BREAKING CHANGE: description  # Breaking changes
+#     Reviewed-by: Name <email>     # Code reviewers
+#     Co-authored-by: Name <email>  # Co-authors
+#     See-also: url or filename     # Related documentation
+#
+# ============================================================================
+# EXAMPLES
+# ============================================================================
+#
+# Example 1 - Simple feature:
+# ───────────────────────────────────────────────────────────────────────────
+# feat(sheets-mcp): add batch update support
+#
+# Implement batch cell update operation for improved performance
+# when updating multiple ranges simultaneously.
+#
+# Performance: Reduces API calls from N to 1 for N ranges.
+#
+# Refs: GH-42
+# ───────────────────────────────────────────────────────────────────────────
+#
+# Example 2 - Bug fix with context:
+# ───────────────────────────────────────────────────────────────────────────
+# fix(auth): prevent token refresh race condition
+#
+# Root cause: Multiple concurrent requests could attempt token refresh
+# simultaneously, causing authentication failures.
+#
+# Solution: Add mutex lock around token refresh logic to ensure only
+# one refresh operation occurs at a time.
+#
+# Impact: Fixes ~5% of authentication errors in production.
+#
+# Fixes: GH-234
+# Reviewed-by: Security Team <security@example.com>
+# ───────────────────────────────────────────────────────────────────────────
+#
+# Example 3 - Documentation:
+# ───────────────────────────────────────────────────────────────────────────
+# docs: add ADR for Service Account security approach
+#
+# Document decision to use resource-level sharing over domain-wide
+# delegation based on security research and verification testing.
+#
+# Key findings:
+# - Domain-wide delegation has DeleFriend vulnerability
+# - Resource-level sharing follows Principle of Least Privilege
+# - Google officially recommends resource-level approach
+#
+# See-also: docs/architecture/adr/0001-service-account-security.md
+# Refs: GH-1
+# ───────────────────────────────────────────────────────────────────────────
+#
+# Example 4 - Breaking change:
+# ───────────────────────────────────────────────────────────────────────────
+# feat(api)!: migrate to v2 API endpoints
+#
+# Replace v1 REST endpoints with GraphQL-based v2 API for better
+# flexibility and reduced over-fetching.
+#
+# Migration guide: docs/migration/v1-to-v2.md
+#
+# BREAKING CHANGE: The /v1 API endpoints have been removed. All
+# clients must migrate to /v2. Response format has changed from
+# REST to GraphQL. See migration guide for details.
+#
+# Refs: GH-567
+# Co-authored-by: Claude Sonnet 4.5 <noreply@anthropic.com>
+# ───────────────────────────────────────────────────────────────────────────
+#
+# ============================================================================
+# PROJECT-SPECIFIC GUIDELINES
+# ============================================================================
+#
+# All commits should:
+# - Include GitHub issue reference (Refs: GH-XXX or Closes: GH-XXX)
+# - Add Claude co-author line when AI-assisted:
+#   Co-authored-by: Claude Sonnet 4.5 <noreply@anthropic.com>
+# - Link to documentation for significant changes (See-also: ...)
+#
+# For AI-generated commits, add at end:
+# 🤖 Generated with [Claude Code](https://claude.com/claude-code)
+#
+# ============================================================================
