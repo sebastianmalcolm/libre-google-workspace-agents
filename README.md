@@ -87,13 +87,16 @@ git worktree add -b investigation/oauth2-vs-service-account-performance-comparis
 
 ## Project Milestones (Feature-Driven, Not Time-Driven)
 
-### Milestone 1: Foundation & Security ✓ (In Progress)
+### Milestone 1: Foundation & Security 🚧 (In Progress)
 - [x] Service Account authentication research
 - [x] Security comparison (resource-level vs DwD)
 - [x] Phase 1 verification of existing MCP servers
-- [ ] Comprehensive testing framework
-- [ ] Documentation infrastructure
-- [ ] GitHub project structure with Issues/Milestones
+- [x] ADR-0001: Service Account security decision documented
+- [x] GitHub project structure with Issues/Milestones
+- [x] Conventional commit template established
+- [x] Dialectic synthesis of development approach
+- [ ] Verification test automation script
+- [ ] Documentation site setup (deferred until needed)
 
 ### Milestone 2: Google Sheets MCP Server
 - [ ] Complete MCP server implementation
@@ -141,6 +144,34 @@ git worktree add -b investigation/oauth2-vs-service-account-performance-comparis
 - **Package Management**: uv (fast Python package manager)
 - **Code Quality**: ruff (linting), black (formatting), mypy (type checking)
 - **Security**: safety (dependency scanning), bandit (security linting)
+
+## Documentation
+
+### Key Documents
+
+- **[SYNTHESIS.md](SYNTHESIS.md)** - Dialectic synthesis of comprehensive vs pragmatic development approaches
+- **[ADR-0001](docs/architecture/adr/0001-service-account-security.md)** - Service Account security architecture decision
+- **[.gitmessage](.gitmessage)** - Conventional commit message template
+
+### Architecture Decision Records (ADRs)
+
+We use Architecture Decision Records to document significant architectural decisions:
+
+| ADR | Title | Status | Date |
+|-----|-------|--------|------|
+| [ADR-0001](docs/architecture/adr/0001-service-account-security.md) | Use Resource-Level Sharing for Service Account Access | Accepted | 2025-12-29 |
+
+### Development Approach
+
+This project follows a **staged maturity model** that balances pragmatic delivery with systematic growth:
+
+1. **Start Pragmatic**: Minimum viable infrastructure, ship working code first
+2. **Validate Early**: Prove value before expanding scope
+3. **Add Systematically**: Use trigger conditions based on evidence, not speculation
+4. **Document Continuously**: README-first, expand as project grows
+5. **Automate Gradually**: Manual → Semi-automated → Fully automated
+
+See [SYNTHESIS.md](SYNTHESIS.md) for detailed philosophy and decision matrix.
 
 ## Getting Started
 
